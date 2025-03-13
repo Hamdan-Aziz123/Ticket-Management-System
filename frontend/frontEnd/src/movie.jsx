@@ -24,7 +24,7 @@ function Movie() {
     };
 
     const handleSearch = async () => {
-        fetch(`http://localhost:5172/movies`)
+        fetch(`${process.env.REACT_APP_API_URL}/movies`)
         .then((response) => response.json())
         .then((json) =>{
             if(search1 === "All"){
@@ -60,7 +60,7 @@ function Movie() {
                 setPrice(count*350);
             }
             try{
-                const response = await axios.post('http://localhost:5172/movieTick',{
+                const response = await axios.post(`${process.env.REACT_APP_API_URL}/movieTick`,{
                    Title: title,
                    Genre: genre,
                    Price: price,
@@ -123,7 +123,7 @@ function Movie() {
     
         try{
         console.log(link,genre,title,theaterName);
-        const response = await axios.post('http://localhost:5172/moviesI',{
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/moviesI`,{
             Title: title,
             Genre: genre,
             Link: link,

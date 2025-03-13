@@ -24,7 +24,7 @@ function Train() {
   const handleTickets = async () => {
     //console.log(traveldate);
     try {
-    const response = await axios.post('http://localhost:5172/train', {
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/train`, {
       Buyer: buyername,
       Email: email,
       Contact: contact,

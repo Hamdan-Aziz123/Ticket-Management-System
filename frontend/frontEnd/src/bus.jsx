@@ -24,39 +24,38 @@ function Bus() {
      
      // const {name,email} = auth.user;
       //console.log(auth.user);
-    const handleSubmit = async (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
         handleTickets();
-      }
+      };
+      
       const handleTickets = async () => {
-        //console.log(traveldate);
         try {
-        const response = await axios.post('http://localhost:5172/bus', {
-          Buyer: buyername,
-          Email: email,
-          Contact: contact,
-          BusName: busname,
-          TicketType: tickettype,
-          SrcFrom: srcfrom,
-          DestTo: destto,
-          TravelDate: traveldate,
-          TotalSeats: totalseats,
-          UserId: auth.user.UserID
-        });
-        if (response.status === 201) {
-          // User created successfully
-          setErrorMessage('Ticket Booked Successfully');
+          const response = await axios.post(`${process.env.REACT_APP_API_URL}/bus`, {
+            Buyer: buyername,
+            Email: email,
+            Contact: contact,
+            BusName: busname,
+            TicketType: tickettype,
+            SrcFrom: srcfrom,
+            DestTo: destto,
+            TravelDate: traveldate,
+            TotalSeats: totalseats,
+            UserId: auth.user.UserID,
+          });
+      
+          if (response.status === 201) {
+            setErrorMessage('Ticket Booked Successfully');
+          }
+        } catch (error) {
+          if (error.response && error.response.data) {
+            setErrorMessage(error.response.data);
+          } else {
+            setErrorMessage('An error occurred. Please try again later.');
+          }
         }
-      } catch (error) {
-        // Handle error responses from the server
-        if (error.response && error.response.data) {
-          setErrorMessage(error.response.data);
-        } else {
-          setErrorMessage('An error occurred. Please try again later.');
-        }
-      }
-    };
-    
+      };
+      
     return (
         <div>
            <Head />

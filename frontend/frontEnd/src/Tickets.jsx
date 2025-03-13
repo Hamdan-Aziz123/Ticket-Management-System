@@ -14,46 +14,46 @@ function Tickets() {
   const [delTick,setTick] = useState('');
   const auth=React.useContext(AuthContext);
   useEffect(()=>{
-    fetch('http://localhost:5172/TicketsM')
+    fetch(`${process.env.REACT_APP_API_URL}/TicketsM`)
     .then(res=> res.json())
     .then(ticksM =>setTicksM(ticksM))
     .catch(err=>console.log(err));
   },[]);
 
   useEffect(()=>{
-    fetch('http://localhost:5172/TicketsB')
+    fetch(`${process.env.REACT_APP_API_URL}/TicketsB`)
     .then(res=> res.json())
     .then(ticksB =>setTicksB(ticksB))
     .catch(err=>console.log(err));
   },[]);
 
   useEffect(()=>{
-    fetch('http://localhost:5172/TicketsC')
+    fetch(`${process.env.REACT_APP_API_URL}/TicketsC`)
     .then(res=> res.json())
     .then(ticksC =>setTicksC(ticksC))
     .catch(err=>console.log(err));
   },[]);
   useEffect(()=>{
-    fetch('http://localhost:5172/TicketsT')
+    fetch(`${process.env.REACT_APP_API_URL}/TicketsT`)
     .then(res=> res.json())
     .then(ticksT =>setTicksT(ticksT))
     .catch(err=>console.log(err));
   },[]);
 
   useEffect(()=>{
-    fetch('http://localhost:5172/TicketsTou')
+    fetch(`${process.env.REACT_APP_API_URL}/TicketsTou`)
     .then(res=> res.json())
     .then(ticksTou =>setTicksTou(ticksTou))
     .catch(err=>console.log(err));
   },[]);
   useEffect(()=>{
-    fetch('http://localhost:5172/TicketsE')
+    fetch(`${process.env.REACT_APP_API_URL}/TicketsE`)
     .then(res=> res.json())
     .then(ticksE =>setTicksE(ticksE))
     .catch(err=>console.log(err));
   },[]);
   useEffect(()=>{
-    fetch('http://localhost:5172/TicketsA')
+    fetch(`${process.env.REACT_APP_API_URL}/TicketsA`)
     .then(res=> res.json())
     .then(ticksA =>setTicksA(ticksA))
     .catch(err=>console.log(err));
@@ -62,7 +62,7 @@ function Tickets() {
   const handleRemove = async () => {
     if(delEmail !== ''){
     try {
-      const response = await axios.post('http://localhost:5172/removeTicket', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/removeTicket`, {
         Email: delEmail,
       });
       if (response.status === 200) {
