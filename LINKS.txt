@@ -1,0 +1,8 @@
+FRONTEND VERCEL:
+https://ticketing-frontend-ashen.vercel.app/movie
+
+BACKEND MOVIES FETCHING:
+https://ticketing-backend-hge1.vercel.app/movies
+
+DATABASE MYSQL:
+https://mysql-addon-clevercloud-customers.services.clever-cloud.com/dashboard?token=yGDfoKtQZl19SerEoL8vbKptefhFdeDcYCc2ftQYDnGOB%2Bkm8zze0M5ir8Ak%2FbG0n1nZXsBOnvgGgiH428zv3QRa%2BYw4IueRi7JfJShe%2F3yG9Np3nVrvoD8MnxmoBorZ%7C9sxd2STIPHnaXMy1%2Bx4S6SJ%2FGydNXzAB#config-tab

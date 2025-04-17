@@ -48,7 +48,7 @@ GO
 
 exec InsertAdmin @Username='Sarosh Humayun', @Email='sarosh.humayun@lhr.nu.edu.pk',@PasswordHash='123456',@isAdmin=1;
 -- Create a stored procedure to retrieve a user by username and password hash
-alter PROCEDURE CheckUser
+create PROCEDURE CheckUser
     @Email NVARCHAR(50),
     @PasswordHash NVARCHAR(100)
 AS
